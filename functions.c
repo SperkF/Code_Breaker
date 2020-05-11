@@ -52,9 +52,10 @@ void code_breaker_add_new_row (GtkWidget *grid, gint row, struct widget_of_one_r
 		gtk_widget_set_sensitive (s_current_row->button_code2, FALSE);
 		gtk_widget_set_sensitive (s_current_row->button_code3, FALSE);
 		gtk_widget_set_sensitive (s_current_row->button_code4, FALSE);
-		gtk_widget_set_sensitive (s_current_row->button_pos_hits, FALSE);
-		gtk_widget_set_sensitive (s_current_row->button_col_hits, FALSE);
 	}
+	/*feedback buttons are greyed out everytime*/
+	gtk_widget_set_sensitive (s_current_row->button_pos_hits, FALSE);
+	gtk_widget_set_sensitive (s_current_row->button_col_hits, FALSE);
 	/*	add new widgets to grid	*/
 	gtk_grid_attach (GTK_GRID (grid), s_current_row->label, 0, row, 1, 1);
 	gtk_grid_attach (GTK_GRID (grid), s_current_row->button_code1, 1, row, 1, 1);
@@ -215,10 +216,16 @@ void test_button_clicked (GtkWidget *button, gpointer user_data)
 // callback that is executed when one of the "code" buttons in the body is pressed
 void cb_code1_clicked_change_apperance (GtkWidget *button, gpointer user_data)
 {
-	(void) user_data;
-//if(*butt)
+	//(void*) user_data; //->no need to typecast to void -gpointer- is synonym for void*
 	static gint button_state = 0; //static variable declaration ->will hold value form one func call to next
 
+/*****callback is invoked from test_button clicked******/
+	if(user_data != NULL)
+	{
+		button_state = 0;
+		return;
+	}
+/***********************************************/
 	if (0 == button_state) {
 		gtk_button_set_label (GTK_BUTTON (button), "0");
 		gtk_widget_set_name (button, "button_state0");
@@ -248,8 +255,15 @@ void cb_code1_clicked_change_apperance (GtkWidget *button, gpointer user_data)
 // callback that is executed when one of the "code" buttons in the body is pressed
 void cb_code2_clicked_change_apperance (GtkWidget *button, gpointer user_data)
 {
-	(struct game_config*) user_data;
 	static gint button_state = 0; //static variable declaration ->will hold value form one func call to next
+
+	/*****callback is invoked from test_button clicked******/
+		if(user_data != NULL)
+		{
+			button_state = 1;
+			return;
+		}
+	/***********************************************/
 
 	if (button_state == 1) {
 		gtk_button_set_label (GTK_BUTTON (button), "0");
@@ -269,20 +283,20 @@ void cb_code2_clicked_change_apperance (GtkWidget *button, gpointer user_data)
 		gtk_widget_set_name (button, "button_state3");
 	}
 	if (button_state == 4) {
-		gtk_button_set_label (GTK_BUTTON (button), "3");
-		gtk_widget_set_name (button, "button_state3");
+		gtk_button_set_label (GTK_BUTTON (button), "4");
+		gtk_widget_set_name (button, "button_state4");
 	}
 	if (button_state == 5) {
-		gtk_button_set_label (GTK_BUTTON (button), "3");
-		gtk_widget_set_name (button, "button_state3");
+		gtk_button_set_label (GTK_BUTTON (button), "5");
+		gtk_widget_set_name (button, "button_state5");
 	}
 	if (button_state == 6) {
-		gtk_button_set_label (GTK_BUTTON (button), "3");
-		gtk_widget_set_name (button, "button_state3");
+		gtk_button_set_label (GTK_BUTTON (button), "6");
+		gtk_widget_set_name (button, "button_state6");
 	}
 	if (button_state == 7) {
-		gtk_button_set_label (GTK_BUTTON (button), "3");
-		gtk_widget_set_name (button, "button_state3");
+		gtk_button_set_label (GTK_BUTTON (button), "7");
+		gtk_widget_set_name (button, "button_state7");
 	}
 
 	#if FS_DEBUG_BUTTON
@@ -290,14 +304,21 @@ void cb_code2_clicked_change_apperance (GtkWidget *button, gpointer user_data)
 	#endif
 	button_state++;
 	if (button_state == 8)
-		button_state = 0;
+		button_state = 1;
 }
 
 // callback that is executed when one of the "code" buttons in the body is pressed
 void cb_code3_clicked_change_apperance (GtkWidget *button, gpointer user_data)
 {
-	(void) user_data;
 	static gint button_state = 0; //static variable declaration ->will hold value form one func call to next
+
+	/*****callback is invoked from test_button clicked******/
+		if(user_data != NULL)
+		{
+			button_state = 0;
+			return;
+		}
+	/***********************************************/
 
 	if (0 == button_state) {
 		gtk_button_set_label (GTK_BUTTON (button), "0");
@@ -321,14 +342,21 @@ void cb_code3_clicked_change_apperance (GtkWidget *button, gpointer user_data)
 	#endif
 	button_state++;
 	if (4 == button_state) //loop around
-		button_state = 0;
+		button_state = 1;
 }
 
 // callback that is executed when one of the "code" buttons in the body is pressed
 void cb_code4_clicked_change_apperance (GtkWidget *button, gpointer user_data)
 {
-	(void) user_data;
 	static gint button_state = 0; //static variable declaration ->will hold value form one func call to next
+
+	/*****callback is invoked from test_button clicked******/
+		if(user_data != NULL)
+		{
+			button_state = 0;
+			return;
+		}
+	/***********************************************/
 
 	if (0 == button_state) {
 		gtk_button_set_label (GTK_BUTTON (button), "0");
@@ -353,6 +381,6 @@ void cb_code4_clicked_change_apperance (GtkWidget *button, gpointer user_data)
 	#endif
 	button_state++;
 	if (4 == button_state)
-		button_state = 0;
+		button_state = 1;
 }
 /** EOF */

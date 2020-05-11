@@ -1,3 +1,4 @@
+/*
 #button_state0 {
   background-image: none;
   background-color: #8ae234;
@@ -14,23 +15,38 @@
   background-image: none;
   background-color: #e9b96e;
 }
+*/
 
-/* can also be done via names instead of hex-color scheme
-#button2_state0 {
-  background-image: none;
-	background-color: red;
-}
-
-#button2_state1 {
-  background-image: none;
-	background-color: green;
-}
-#button2_state2 {
-  background-image: none;
-	background-color: blue;
-}
-#button2_state3 {
+/* can also be done via names instead of hex-color scheme */
+#button_state0 {
   background-image: none;
 	background-color: grey;
 }
-*/
+#button_state1 {
+  background-image: none;
+	background-color: yellow;
+}
+#button_state2 {
+  background-image: none;
+	background-color: orange;
+}
+#button_state3 {
+  background-image: none;
+	background-color: red;
+}
+#button_state4 {
+  background-image: none;
+  background-color: green;
+}
+#button_state5 {
+  background-image: none;
+  background-color: purple;
+}
+#button_state6 {
+  background-image: none;
+  background-color: blue;
+}
+#button_state7 {
+  background-image: none;
+  background-color: black;
+}

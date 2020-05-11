@@ -30,7 +30,6 @@ static void activate (GtkApplication* app, gpointer user_data)
 
 	GtkWidget *window;
 	GtkWidget *grid;
-	GtkWidget *test_button;
 	/*add CSS functionality*/
 	GtkCssProvider *cssProvider;
 	cssProvider = gtk_css_provider_new();
@@ -70,13 +69,17 @@ static void activate (GtkApplication* app, gpointer user_data)
 
 	/*  create new widgets and set paramters for them*/
 	//new widget: test button
-	test_button = gtk_button_new_with_label ("test");
-	gtk_widget_set_name (test_button, "button_state0");
-	gtk_widget_set_size_request (test_button, 30, 30);
-	g_signal_connect (test_button, "clicked", G_CALLBACK (test_button_clicked), (gpointer) s_widget);
-
+	s_widget->button_test = gtk_button_new_with_label ("test");
+	gtk_widget_set_name (s_widget->button_test, "button_state0");
+	gtk_widget_set_size_request (s_widget->button_test, 30, 30);
+	g_signal_connect (s_widget->button_test, "clicked", G_CALLBACK (test_button_clicked), (gpointer) s_widget);
+	//further cb functioons that we want to envoke if test button is clicked ->will reset their counter
+	g_signal_connect (s_widget->button_test, "clicked", G_CALLBACK (cb_code1_clicked_change_apperance), (gpointer) s_widget);
+		g_signal_connect (s_widget->button_test, "clicked", G_CALLBACK (cb_code2_clicked_change_apperance), (gpointer) s_widget);
+			g_signal_connect (s_widget->button_test, "clicked", G_CALLBACK (cb_code3_clicked_change_apperance), (gpointer) s_widget);
+				g_signal_connect (s_widget->button_test, "clicked", G_CALLBACK (cb_code4_clicked_change_apperance), (gpointer) s_widget);
 	/*  fill grid with content */
-	gtk_grid_attach (GTK_GRID (grid), test_button, 0, 0, 2, 1);
+	gtk_grid_attach (GTK_GRID (grid), s_widget->button_test, 0, 0, 2, 1);
 
 
 
