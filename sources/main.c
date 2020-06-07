@@ -1,7 +1,11 @@
 #include <gtk/gtk.h>
 #include <string.h>
-#include "functions.h"
-#include "dataTypes.h"
+// path/file ->to include files that are not in same directory
+// ..=step out one directory; ->then step into includes directory
+#include "../includes/functions.h"
+#include "../includes/dataTypes.h"
+
+#define CSS_PROFIDER_FILE "./includes/bdemo.css"
 
 // map menu actions to callbacks
 const GActionEntry app_actions[] = {
@@ -126,7 +130,7 @@ static void activate (GtkApplication* app, gpointer user_data)
 	/*add CSS functionality*/
 	GtkCssProvider *cssProvider;
 	cssProvider = gtk_css_provider_new();
-	gtk_css_provider_load_from_path (cssProvider, "bdemo.css", NULL);
+	gtk_css_provider_load_from_path (cssProvider, CSS_PROFIDER_FILE, NULL);
 	gtk_style_context_add_provider_for_screen (gdk_screen_get_default(),
 						   GTK_STYLE_PROVIDER (cssProvider),
 						   GTK_STYLE_PROVIDER_PRIORITY_USER);

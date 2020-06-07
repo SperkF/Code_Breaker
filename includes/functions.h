@@ -6,9 +6,10 @@
 #include <libintl.h>
 #include "dataTypes.h"
 
-
-#define TEXTFILE_GAME_STATS "game_statistics.txt"
-#define TEXTFILE_README "readme.txt"
+// path/file ->to include files that are not in same directory
+// .=current directory; ->then step into includes directory
+#define TEXTFILE_GAME_STATS "./includes/game_statistics.txt"
+#define TEXTFILE_README "./includes/readme.txt"
 #define _(string) gettext (string)
 
 //note: multple functions inside the functions.h are static ->only viable in this file and no other

@@ -1,5 +1,6 @@
-
-#include "functions.h"
+// path/file ->to include files that are not in same directory
+// ..=step out one directory; ->then step into includes directory
+#include "../includes/functions.h"
 
 #define DIALOG_RESPONSE_SHOW_STATS 10
 #define DIALOG_RESPONSE_SAVE_STATS 66
