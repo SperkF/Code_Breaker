@@ -1,0 +1,10 @@
+PLAYER: ff won in 7 SECONDS, it took him  till ROUND 1
+PLAYER: ff won in 6 SECONDS, it took him  till ROUND 1
+PLAYER:  won in 7 SECONDS, it took him  till ROUND 1
+PLAYER: gg won in 16 SECONDS, it took him  till ROUND 2
+PLAYER: Hannes won in 10 SECONDS, it took him  till ROUND 1
+PLAYER: Fabian won in 17 SECONDS, it took him  till ROUND 2
+PLAYER: GG won in 17 SECONDS, it took him  till ROUND 2
+PLAYER: Eva-Maria won in 112 SECONDS, it took him  till ROUND 8
+PLAYER: Matthias won in 27 SECONDS, it took him  till ROUND 1
+PLAYER: Fabian won in 6 SECONDS, it took him  till ROUND 1

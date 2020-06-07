@@ -1,23 +1,39 @@
-/*
 #button_state0 {
   background-image: none;
-  background-color: #8ae234;
+  background-color: #F0F8FF;
 }
 #button_state1 {
   background-image: none;
-  background-color: #729fcf;
+  background-color: #00FFFF;
 }
 #button_state2 {
   background-image: none;
-  background-color: #ad7fa8;
+  background-color: #0000FF;
 }
 #button_state3 {
   background-image: none;
-  background-color: #e9b96e;
+  background-color: #5F9EA0;
 }
-*/
+#button_state4 {
+  background-image: none;
+  background-color: #7FFF00;
+}
+#button_state5 {
+  background-image: none;
+  background-color: #A52A2A;
+}
+#button_state6 {
+  background-image: none;
+  background-color: #DC143C;
+}
+#button_state7 {
+  background-image: none;
+  background-color: #B8860B;
+}
+
 
 /* can also be done via names instead of hex-color scheme */
+/*
 #button_state0 {
   background-image: none;
 	background-color: grey;
@@ -50,3 +66,4 @@
   background-image: none;
   background-color: black;
 }
+*/

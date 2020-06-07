@@ -5,6 +5,7 @@
  * defines used in multiple files
  */
 #define FS_DEBUG_BUTTON 0
+#define FS_DEBUG 1
 #define ROWS_OF_GAME 12
 #define GREY_OUT 420
 
@@ -40,11 +41,24 @@ struct my_widgets {
 	struct widget_of_one_row row12;
 
 	//struct widgets of top and bottom menu bar
-	GtkWidget *button_test;
-};
+	GtkWidget *submit_button;
+	GtkWidget *retry_button;
+	GtkWidget *statusbar;
+	guint id;
 
-struct game_config {
-	gchar difficulty;
+	//"global" variables
+	gint current_row;
+	gint alph_difficulty; //easy, med, hard.. 0,1,2
+	gint prev_tries_difficulty; //easy, med, hard.. 2,1,0
+	gint current_tries_difficulty;
+	gchar code[8];
+	guint gametime;
+	guint seconds_it_took;
+	GtkWidget *entry; //enter-text filed inside the you won popup
+	//further widgets
+	GtkWidget *window;
+	GtkApplication *app;
+	GtkWidget *grid;
 };
 
 
